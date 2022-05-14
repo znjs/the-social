@@ -20,8 +20,8 @@ import {
   addPostCommentHandler,
   editPostCommentHandler,
   deletePostCommentHandler,
-  upvotePostCommentHandler,
-  downvotePostCommentHandler,
+  // upvotePostCommentHandler,
+  // downvotePostCommentHandler,
 } from "./backend/controllers/CommentsController";
 import {
   followUserHandler,
@@ -91,14 +91,14 @@ export function makeServer({ environment = "development" } = {}) {
         "/comments/delete/:postId/:commentId",
         deletePostCommentHandler.bind(this)
       );
-      this.post(
-        "/comments/upvote/:postId/:commentId",
-        upvotePostCommentHandler.bind(this)
-      );
-      this.post(
-        "/comments/downvote/:postId/:commentId",
-        downvotePostCommentHandler.bind(this)
-      );
+      // this.post(
+      //   "/comments/upvote/:postId/:commentId",
+      //   upvotePostCommentHandler.bind(this)
+      // );
+      // this.post(
+      //   "/comments/downvote/:postId/:commentId",
+      //   downvotePostCommentHandler.bind(this)
+      // );
       // user routes (public)
       this.get("/users", getAllUsersHandler.bind(this));
       this.get("/users/:userId", getUserHandler.bind(this));
